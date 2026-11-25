@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: morajunto-api
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/morajunto?useSSL=false&serverTimezone=America/Sao_Paulo&allowPublicKeyRetrieval=true}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:rafa}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: America/Sao_Paulo
+
+morajunto:
+  jwt:
+    secret: ${JWT_SECRET:Qvqh5wC/V2Lplb00Q25aTnR2NfEcCXV6cJ1n/DjYHqA88OccT0rWiz6rQivdttjt}
+    expiracao-minutos: ${JWT_EXPIRACAO_MINUTOS:120}
+  cors:
+    origens: ${CORS_ORIGENS:http://localhost:5173,http://localhost:3000}
